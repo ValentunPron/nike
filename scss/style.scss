@@ -1,0 +1,13 @@
+//---Подключение других библиотек---//
+// --- Обнуление --- //
+@import "_nullstyle.scss";
+// ---  Глобальні стилі --- //
+@import "_global.scss";
+// ---  Шрифти ---  // 
+@import "_fonts.scss";
+// --- header / footer --- /
+@import "_header.scss";
+@import "_footer.scss";
+@import "_adaptive.scss";
+@import "_hero.scss"
+// --- Другие страницы --- //

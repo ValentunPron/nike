@@ -1,0 +1,149 @@
+html, body {
+	font-size: 16px;
+}
+
+* {
+	color: var(--black);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	padding: 0; margin: 0;
+}
+
+body {
+	font-family: 'Raleway', 'Times', sans-serif;
+	font-weight: 400;
+	font-size: 1rem;
+	color: var(--black-hover);
+	background-color: #fff;
+}
+
+:root {
+	--index: calc(1vh + 1 vw);
+	--green: #EBFFE4;
+	--dark-grenn: #5CBE3A;
+	--black: #0511019a;
+	--black-hover: #051101;
+}
+
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+	overflow: hidden;
+}
+
+.main {
+	flex: 1 0 auto;
+}
+
+.main-header {
+	position: relative;
+	background-color: #EBFFE4;
+	min-height: 100vh;
+	.container {
+		position: relative;
+		&::after {
+			position: absolute;
+			content: '';
+			width: 770px; height: 100%;
+			top: 0px; right: -275px;
+			background: url('../img/snickers/bg.svg') no-repeat;
+			background-size: contain;
+			z-index: 2;
+		}
+	}
+}
+
+.footer {
+	flex: 0 0 auto;
+}
+
+.link {
+	color: var(--black);
+	transition: color .3s ease-in;
+	&:hover {
+		color: var(--black-hover);
+	}
+}
+
+.button {
+	padding: 15px 30px;
+	background-color: var(--dark-grenn);
+	color: #fff;
+	text-transform: uppercase;
+	transition: 0.3s ease-in;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	&:hover {
+		color: var(--dark-grenn);
+		border: 1px solid var(--dark-grenn);
+		background-color: transparent;
+		transform: translateY(-2px);
+	}
+	&.transparent {
+		color: var(--dark-grenn);
+		border: 1px solid rgba(92, 190, 58, 0.3);
+		background-color: transparent;
+		&:hover {
+			background-color: var(--dark-grenn);
+			color: #fff;
+		}
+	}
+}
+
+.logo {
+	transition: opacity 0.3s ease;
+	&:hover {
+		opacity: 0.8;
+	}
+}
+
+.container {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 15px;
+}
+
+@media (max-width: 1400px) {
+	.main-header {
+		.container {
+			position: relative;
+			&::after {
+				position: absolute;
+				content: '';
+				width: calc((1vh + 1vw) * 40); height: 100%;
+				top: 0px; right: calc((1vh + 1vw) * (-9));
+				z-index: 2;
+			}
+		}
+	}
+}
+
+@media (max-width: 772px) {
+	html {
+		font-size: 14px;
+	}
+	.logo {
+		svg {
+			width: 70px;
+		}
+	}
+	.button {
+		padding: 10px 20px;
+	}
+}
+
+@media (max-width: 416px) {
+	html {
+		font-size: 12px;
+	}
+	.logo {
+		svg {
+			width: 50px;
+		}
+	}
+	.button {
+		padding: 8px 15px;
+	}
+}
