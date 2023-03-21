@@ -35,12 +35,14 @@ body {
 
 .main {
 	flex: 1 0 auto;
+	padding-top: 500px;
 }
 
 .main-header {
 	position: relative;
 	background-color: #EBFFE4;
-	min-height: 100vh;
+	min-height: 100%;
+	padding-bottom: 50px;
 	.container {
 		position: relative;
 		&::after {
@@ -51,6 +53,7 @@ body {
 			background: url('../img/snickers/bg.svg') no-repeat;
 			background-size: contain;
 			z-index: 2;
+			pointer-events: none;
 		}
 	}
 }
@@ -103,6 +106,17 @@ body {
 	max-width: 1180px;
 	margin: 0 auto;
 	padding: 0 15px;
+}
+
+@media (max-width: 1000px) {
+	.main-header {
+		.container {
+			position: relative;
+			&::after {
+				display: none;
+			}
+		}
+	}
 }
 
 @media (max-width: 1400px) {

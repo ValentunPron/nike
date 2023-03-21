@@ -111,12 +111,14 @@ body {
 
 .main {
   flex: 1 0 auto;
+  padding-top: 500px;
 }
 
 .main-header {
   position: relative;
   background-color: #EBFFE4;
-  min-height: 100vh;
+  min-height: 100%;
+  padding-bottom: 50px;
 }
 
 .main-header .container {
@@ -133,6 +135,7 @@ body {
   background: url("../img/snickers/bg.svg") no-repeat;
   background-size: contain;
   z-index: 2;
+  pointer-events: none;
 }
 
 .footer {
@@ -188,6 +191,15 @@ body {
   max-width: 1180px;
   margin: 0 auto;
   padding: 0 15px;
+}
+
+@media (max-width: 1000px) {
+  .main-header .container {
+    position: relative;
+  }
+  .main-header .container::after {
+    display: none;
+  }
 }
 
 @media (max-width: 1400px) {
@@ -380,10 +392,11 @@ body {
 }
 
 .hero__content {
+  will-change: transform;
   position: relative;
   color: #051101;
   max-width: 420px;
-  z-index: 10;
+  z-index: 5;
 }
 
 .hero__top {
@@ -459,6 +472,8 @@ body {
   display: flex;
   gap: 70px;
   margin-top: calc((1vh + 1vw) * 5);
+  z-index: 4;
+  pointer-events: none;
 }
 
 .hero__dignity {
@@ -482,11 +497,55 @@ body {
 
 .hero__image {
   position: absolute;
-  right: -120px;
+  right: -100vw;
   bottom: calc((1vh + 1vw) * 10);
   width: calc((1vh + 1vw) * 37);
-  z-index: 5;
+  z-index: -1;
+  transform: rotate(-15deg);
+  transition: .4s ease-in;
   pointer-events: none;
+}
+
+.hero__image.active {
+  right: -120px;
+  z-index: 5;
+}
+
+.hero__tabs {
+  display: flex;
+  gap: 30px;
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  z-index: 6;
+}
+
+.hero__tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 100%;
+  width: 110px;
+  height: 110px;
+  border: 1px solid #BEE761;
+  cursor: pointer;
+  transition: all .4s ease-in;
+}
+
+.hero__tab img {
+  border-radius: 100%;
+  object-fit: contain;
+  transition: all .2s ease-in;
+}
+
+.hero__tab.active {
+  background-color: #BEE761;
+}
+
+.hero__tab:hover img {
+  background-size: 100%;
+  background-color: #BEE761;
 }
 
 @media (min-width: 1400px) {
@@ -513,20 +572,23 @@ body {
   }
   .hero__image {
     position: absolute;
-    right: -120px;
     top: calc((1vh + 1vw) * 0);
     max-width: 700px;
-    z-index: 5;
   }
 }
 
 @media (max-width: 1400px) {
   .hero__image {
-    right: -0px;
     bottom: 100px;
+  }
+  .hero__image.active {
+    right: 0px;
   }
   .hero__bottom {
     margin-top: 30px;
+  }
+  .hero__tabs {
+    right: 0;
   }
 }
 
@@ -535,6 +597,117 @@ body {
     margin-top: 50px;
   }
   .hero__image {
-    min-width: 650px;
+    min-width: 660px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .hero__image {
+    min-width: 0;
+    width: calc((1vh + 1vw) * 30);
+  }
+  .hero__dignity {
+    font-size: calc((60/16) * 1rem);
+    color: #5CBE3A;
+  }
+  .hero__dignity span {
+    margin-top: 7px;
+    line-height: 1;
+    text-align: center;
+    font-size: 1rem;
+    color: #051101;
+    opacity: 0.7;
+  }
+  .hero__tab {
+    width: 90px;
+    height: 90px;
+  }
+  .hero__tab img {
+    width: 66px;
+    height: 66px;
+  }
+}
+
+@media (max-width: 772px) {
+  .hero__content {
+    max-width: 370px;
+  }
+  .hero__top svg {
+    margin-left: 20px;
+  }
+  .hero__title {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-size: calc((50/16) * 1rem);
+  }
+  .hero__description {
+    padding-top: calc((1vh + 1vw) * 0.4);
+  }
+  .hero__price {
+    font-size: calc((28/16) * 1rem);
+  }
+  .hero__price span {
+    font-size: 1.1rem;
+    margin-left: 15px;
+  }
+  .hero__action {
+    margin-top: calc((1vh + 1vw) * 2);
+  }
+  .hero__button {
+    padding: 10px 15px;
+  }
+  .hero__button + .hero__button {
+    margin-left: calc((1vh + 1vw) * 1.5);
+  }
+  .hero__bottom {
+    gap: 50px;
+    margin-top: calc((1vh + 1vw) * 3);
+  }
+  .hero__dignity {
+    font-size: calc((40/16) * 1rem);
+    line-height: 120%;
+  }
+  .hero__dignity span {
+    font-size: 0.8rem;
+  }
+  .hero__image {
+    position: absolute;
+    bottom: calc((1vh + 1vw) * 8);
+    width: calc((1vh + 1vw) * 30);
+  }
+  .hero__image.active {
+    right: -80px;
+  }
+  .hero__tabs {
+    gap: 15px;
+  }
+  .hero__tab {
+    width: 60px;
+    height: 60px;
+  }
+  .hero__tab img {
+    width: 45px;
+    height: 45px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hero {
+    padding-bottom: 220px;
+  }
+  .hero__image {
+    margin-top: 30px;
+    text-align: center;
+    width: calc((1vh + 1vw) * 40);
+  }
+  .hero__image.active {
+    right: -20px;
+  }
+  .hero__tabs {
+    right: 0;
+    left: 0;
+    margin: auto;
+    justify-content: center;
+    gap: 25px;
   }
 }
