@@ -35,7 +35,6 @@ body {
 
 .main {
 	flex: 1 0 auto;
-	padding-top: 500px;
 }
 
 .main-header {
@@ -68,6 +67,20 @@ body {
 	&:hover {
 		color: var(--black-hover);
 	}
+}
+
+.title {
+	font-weight: 700;
+	font-size: 2.75rem;	
+	line-height: 1.3;
+	color: #000000;
+}
+.subtitle {
+	font-weight: 400;
+	font-size: 1rem;
+	line-height: 1.4;
+	color: #051101;
+	margin-top: calc((1vw + 1vh) * 1);
 }
 
 .button {
@@ -109,6 +122,9 @@ body {
 }
 
 @media (max-width: 1000px) {
+	html {
+		font-size: 12px;
+	}
 	.main-header {
 		.container {
 			position: relative;

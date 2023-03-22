@@ -1,6 +1,7 @@
 .hero {
 	position: relative;
 	margin-top: calc((1vw + 1vh) * 6);
+
 	&__content {
 		will-change: transform;
 		position: relative;
@@ -12,9 +13,11 @@
 	&__top {
 		display: flex;
 		align-items: center;
+
 		svg {
 			margin-left: 25px;
-			fill: #5CBE3A;;
+			fill: #5CBE3A;
+			;
 		}
 	}
 
@@ -25,6 +28,7 @@
 		text-transform: uppercase;
 		color: #5CBE3A;
 	}
+
 	&__title {
 		margin-top: 1rem;
 		font-weight: 700;
@@ -43,12 +47,13 @@
 		line-height: 150%;
 		color: #051101;
 		opacity: 0.7;
+
 		span {
 			color: #5CBE3A
 		}
 	}
 
-	&__text + &__text {
+	&__text+&__text {
 		margin-top: 10px;
 	}
 
@@ -58,10 +63,11 @@
 		font-size: calc((31/16) * 1rem);
 		line-height: 130%;
 		color: #5CBE3A;
+
 		span {
 			font-size: 1.1rem;
 			margin-left: 30px;
-			text-decoration:line-through;
+			text-decoration: line-through;
 			color: #87D16D;
 		}
 	}
@@ -70,7 +76,7 @@
 		margin-top: calc((1vh + 1vw) * 2);
 	}
 
-	&__button + &__button {
+	&__button+&__button {
 		margin-left: calc((1vh + 1vw) * 1.75);
 	}
 
@@ -90,6 +96,7 @@
 		font-size: calc((85/16) * 1rem);
 		line-height: 120%;
 		color: #5CBE3A;
+
 		span {
 			margin-top: 7px;
 			line-height: 1;
@@ -100,6 +107,7 @@
 			opacity: 0.7;
 		}
 	}
+
 	&__image {
 		position: absolute;
 		right: -100vw;
@@ -109,11 +117,13 @@
 		transform: rotate(-15deg);
 		transition: .4s ease-in;
 		pointer-events: none;
+
 		&.active {
 			right: -120px;
 			z-index: 5;
 		}
 	}
+
 	&__tabs {
 		display: flex;
 		gap: 30px;
@@ -122,24 +132,29 @@
 		bottom: 0;
 		z-index: 6;
 	}
+
 	&__tab {
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		background-color: #f5f5f5;
 		border-radius: 100%;
-		width: 110px; height: 110px;
+		width: 110px;
+		height: 110px;
 		border: 1px solid #BEE761;
 		cursor: pointer;
 		transition: all .4s ease-in;
+
 		img {
 			border-radius: 100%;
 			object-fit: contain;
 			transition: all .2s ease-in;
 		}
+
 		&.active {
 			background-color: #BEE761;
 		}
+
 		&:hover {
 			img {
 				background-size: 100%;
@@ -152,29 +167,31 @@
 @media (min-width: 1400px) {
 	.hero {
 		margin-top: 60px;
-		
+
 		&__description {
 			padding-top: 20px;
 		}
-	
-		&__text + &__text {
+
+		&__text+&__text {
 			margin-top: 10px;
 		}
-	
+
 		&__price {
 			margin-top: 20px;
 		}
-	
+
 		&__action {
 			margin-top: 35px;
 		}
-	
-		&__button + &__button {
+
+		&__button+&__button {
 			margin-left: 30px;
 		}
+
 		&__bottom {
 			margin-top: 80px;
 		}
+
 		&__image {
 			position: absolute;
 			top: calc((1vh + 1vw) * 0);
@@ -187,13 +204,16 @@
 	.hero {
 		&__image {
 			bottom: 100px;
+
 			&.active {
 				right: 0px;
 			}
 		}
+
 		&__bottom {
 			margin-top: 30px;
 		}
+
 		&__tabs {
 			right: 0;
 		}
@@ -203,34 +223,42 @@
 @media (max-width: 1200px) {
 	.hero {
 		margin-top: 50px;
+
 		&__image {
 			min-width: 660px;
 		}
 	}
 }
+
 @media (max-width: 1000px) {
 	.hero {
 		&__image {
 			min-width: 0;
 			width: calc((1vh + 1vw) * 30);
 		}
+
 		&__dignity {
 			font-size: calc((60/16) * 1rem);
 			color: #5CBE3A;
+
 			span {
 				margin-top: 7px;
 				line-height: 1;
 				text-align: center;
 				font-size: 1rem;
-	
+
 				color: #051101;
 				opacity: 0.7;
 			}
 		}
+
 		&__tab {
-			width: 90px; height: 90px;
+			width: 90px;
+			height: 90px;
+
 			img {
-				width: 66px; height: 66px;
+				width: 66px;
+				height: 66px;
 			}
 		}
 	}
@@ -241,30 +269,32 @@
 		&__content {
 			max-width: 370px;
 		}
-	
+
 		&__top {
 			svg {
 				margin-left: 20px;
 			}
 		}
+
 		&__title {
 			margin-top: 1rem;
 			font-weight: 700;
 			font-size: calc((50/16) * 1rem);
 		}
-	
+
 		&__description {
 			padding-top: calc((1vh + 1vw) * 0.4);
 		}
-	
+
 		&__price {
 			font-size: calc((28/16) * 1rem);
+
 			span {
 				font-size: 1.1rem;
 				margin-left: 15px;
 			}
 		}
-	
+
 		&__action {
 			margin-top: calc((1vh + 1vw) * 2);
 		}
@@ -272,37 +302,46 @@
 		&__button {
 			padding: 10px 15px;
 		}
-		&__button + &__button {
+
+		&__button+&__button {
 			margin-left: calc((1vh + 1vw) * 1.5);
 		}
-	
+
 		&__bottom {
 			gap: 50px;
 			margin-top: calc((1vh + 1vw) * 3);
 		}
-	
+
 		&__dignity {
 			font-size: calc((40/16) * 1rem);
 			line-height: 120%;
+
 			span {
 				font-size: 0.8rem;
 			}
 		}
+
 		&__image {
 			position: absolute;
 			bottom: calc((1vh + 1vw) * 8);
 			width: calc((1vh + 1vw) * 30);
+
 			&.active {
 				right: -80px;
 			}
 		}
+
 		&__tabs {
 			gap: 15px;
 		}
+
 		&__tab {
-			width: 60px; height: 60px;
+			width: 60px;
+			height: 60px;
+
 			img {
-				width: 45px; height: 45px;
+				width: 45px;
+				height: 45px;
 			}
 		}
 	}
@@ -310,17 +349,21 @@
 
 @media (max-width: 420px) {
 	.hero {
-		padding-bottom: 220px;
+		padding-bottom: 190px;
+
 		&__image {
 			margin-top: 30px;
 			text-align: center;
-			width:  calc((1vh + 1vw) * 40);
+			width: calc((1vh + 1vw) * 40);
+
 			&.active {
 				right: -20px;
 			}
 		}
+
 		&__tabs {
-			right: 0; left: 0;
+			right: 0;
+			left: 0;
 			margin: auto;
 			justify-content: center;
 			gap: 25px;
