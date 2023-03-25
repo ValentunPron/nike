@@ -1,7 +1,7 @@
 const scrollAnimation = () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TimelineMax);
 
-	if (window.innerWidth <= 1400) {
+	if (window.innerWidth <= 1600) {
 		if (ScrollTrigger.isTouch !== 1) {	
 			gsap.fromTo('.hero__image', { opacity: 0, x: 300}, {opacity: 1, x: 0});
 
@@ -31,6 +31,27 @@ const scrollAnimation = () => {
 				x: 0,
 				scrollTrigger: {
 					trigger: '.view__body',
+					start: '-300',
+					end: '-50',
+					scrub: true
+				}
+			});
+
+			gsap.fromTo('.best__image-block', { opacity: 0, x: -200},  {
+				opacity: 1, 
+				x: 0,
+				scrollTrigger: {
+					trigger: '.best__body',
+					start: '-300',
+					end: '-50',
+					scrub: true
+				}
+			});
+			gsap.fromTo('.best__content', { opacity: 0, x: 200},  {
+				opacity: 1, 
+				x: 0,
+				scrollTrigger: {
+					trigger: '.best__body',
 					start: '-300',
 					end: '-50',
 					scrub: true

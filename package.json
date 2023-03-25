@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/ValentunPron/nike#readme",
   "dependencies": {
+    "swiper": "^6.8.4",
     "webpack": "^5.76.2",
     "webpack-cli": "^5.0.1"
   }
