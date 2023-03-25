@@ -1,0 +1,154 @@
+.footer {
+	position: relative;
+	padding-top: 40px;
+	padding-bottom: calc((1vh + 1vw) * 3);
+	&::before {
+		position: absolute;
+		content: '';
+		bottom: 0; left: 0;
+		width: 100vw;
+		height: 34px;
+		background-color: #5CBE3A;
+	}
+	border-top: 1px solid rgba(0, 0, 0, 0.25);
+	&__body {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+	}
+
+	&__nav {
+		display: flex;
+		gap: 60px;
+	}
+
+	&__link {
+		color: #051101;
+		transition: .4s ease-in;
+		&:hover {
+			opacity: 0.6;
+		}
+	}
+
+	&__social {
+		display: flex;
+		align-items: center;
+		gap: calc((1vh + 1vw) * 2);
+		span {
+			font-weight: 700;
+			font-size: 1.275rem;
+			line-height: 1.4;
+			color: #000;
+		}
+	}
+
+	&__list {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	&__item {
+		display: flex;
+		position: relative;
+		text-align: center;
+		padding: 20px;
+		justify-content: center;
+		&:hover {
+			&::before {
+				background: #60aa48;
+			}
+		}
+		&::before {
+			position: absolute;
+			content: '';
+			width: 48px; height: 48px;
+			background: #5CBE3A;
+			border-radius: 100%;
+			top: 0; bottom: 0;
+			margin: auto;
+			z-index: -1;
+			transition: .4s ease;
+		}
+	}
+}
+
+@media (min-width: 1400px) {
+	.footer {
+		padding-bottom: 80px;
+		&__nav {
+			gap: 40px;
+		}
+	}
+}
+
+@media (max-width: 1000px) {
+	.footer {
+		&__logo {
+			svg {
+				width: 80px;
+			}
+		}
+		&__nav {
+			gap: 20px;
+		}
+		&__list {
+			gap: 10px;
+		}
+		&__item {
+			&::before {
+				width: 40px; height: 40px;
+			}
+		}
+	}
+}
+
+@media (max-width: 772px) {
+	.footer {
+		padding-bottom: 50px;
+		&__body {
+			position: relative;
+			display: flex;
+			flex-direction: column;
+			gap: 15px;
+		}
+		&__link {
+			font-size: 1.25rem;
+		}
+		&__social {
+			margin-right: auto;
+			gap: 10px;
+		}
+		&__list {
+			gap: 0px;
+		}
+		&__logo {
+			position: absolute; right: 0px; bottom: 12px;
+		}
+	}
+}
+
+@media (max-width: 410px) {
+	.footer {
+		padding-bottom: 40px;
+		&__logo {
+			bottom: 8px;
+			svg {
+				width: 60px;
+				height: auto;
+			}
+		}
+		&__link {
+			font-size: 1rem;
+		}
+		&__item {
+			padding: 10px;
+			svg {
+				width: 70%;
+			}
+			&::before {
+				width: 26px; height: 26px;
+			}
+		}
+	}
+}

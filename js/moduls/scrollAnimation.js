@@ -1,7 +1,7 @@
 const scrollAnimation = () => {
 	gsap.registerPlugin(ScrollTrigger, ScrollSmoother, TimelineMax);
 
-	if (window.innerWidth <= 1600) {
+	if (window.innerWidth <= 2000) {
 		if (ScrollTrigger.isTouch !== 1) {	
 			gsap.fromTo('.hero__image', { opacity: 0, x: 300}, {opacity: 1, x: 0});
 
